@@ -13,12 +13,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:id="@+id/iw_avatar"
-        android:background="@drawable/avatar_oval_boarder"
-        android:padding="4dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:elevation="5dp"
+        style="@style/ImageViewListStyle"
         app:srcCompat="@drawable/avatar_oval_boarder"
         android:transitionName="avatar" />
 
@@ -32,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="4dp"
+            android:padding="@dimen/default_small_padding"
             android:text="@string/app_name"
             android:textColor="@color/colorDarkGray" />
 
@@ -42,7 +37,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_below="@+id/tv_registration_date"
-            android:padding="4dp"
+            android:padding="@dimen/default_small_padding"
             android:text="@string/app_name"
             android:textColor="#000000"
             android:textSize="18sp"

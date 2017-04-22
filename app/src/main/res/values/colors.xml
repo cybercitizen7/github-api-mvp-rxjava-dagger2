@@ -8,6 +8,7 @@
     <color name="colorDarkGray80">#CC808080</color>
     <color name="colorDarkGray50">#7F808080</color>
     <color name="colorDarkGray20">#33808080</color>
+    <color name="colorDarkGray10">#19808080</color>
 
     <color name="colorOrangeRed">#F44336</color>
     <color name="colorOrangeRed80">#CCF44336</color>

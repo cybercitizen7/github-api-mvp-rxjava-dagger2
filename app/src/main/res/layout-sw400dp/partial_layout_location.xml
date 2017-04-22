@@ -19,8 +19,6 @@
         android:layout_height="40dp"
         android:layout_weight="1"
         android:maxLines="2"
-        android:background="@drawable/rectangle_rounded_lime"
-        android:textColor="@color/colorPureWhite"
-        android:gravity="center" />
+        style="@style/PartialLayoutStyle.TextViewLime" />
 
 </LinearLayout>
