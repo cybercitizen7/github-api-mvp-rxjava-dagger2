@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_elevation">5dp</dimen>
+
+    <dimen name="default_small_margin">20dp</dimen>
+    <dimen name="default_mid_margin">40dp</dimen>
+
+    <dimen name="default_small_padding">4dp</dimen>
+    <dimen name="default_mid_padding">8dp</dimen>
+</resources>
