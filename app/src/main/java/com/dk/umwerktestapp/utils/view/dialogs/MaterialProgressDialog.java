@@ -44,6 +44,7 @@ public class MaterialProgressDialog {
 
     public void showChooserDialog() {
         new MaterialDialog.Builder(context)
+                .cancelable(false)
                 .title(R.string.chooser_dialog_title)
                 .inputType(InputType.TYPE_CLASS_TEXT)
                 .input(context.getString(R.string.chooser_dialog_hint), null,
