@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Umwerk Test App</string>
+    <string name="app_name">Github Users App</string>
 
     <string name="progress_dialog_title">Loading data…</string>
     <string name="chooser_dialog_title">Insert programming language</string>
