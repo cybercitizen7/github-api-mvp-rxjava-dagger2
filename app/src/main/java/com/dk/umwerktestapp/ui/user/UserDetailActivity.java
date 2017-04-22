@@ -45,7 +45,7 @@ public class UserDetailActivity extends Activity implements UserDetailMvp.View, 
     public static final String EXTRA_TRANSITION_NAME = UserDetailActivity.class.getCanonicalName() + ".transitionName";
 
     @BindView(R.id.tv_followers)TextView tvFollowers;
-    @BindView(R.id.tv_registration_date) TextView tvCreatedAt;
+    @BindView(R.id.tv_id) TextView tvCreatedAt;
     @BindView(R.id.tv_company) TextView tvCompany;
     @BindView(R.id.tv_location) TextView tvLocation;
     @BindView(R.id.iw_avatar) ImageView iwAvatar;

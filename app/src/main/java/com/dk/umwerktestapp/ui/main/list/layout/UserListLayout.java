@@ -27,7 +27,7 @@ public class UserListLayout extends RelativeLayout {
     private final Context context;
 
     @BindView(R.id.tv_username) TextView tvUsername;
-    @BindView(R.id.tv_registration_date) TextView tvRegistrationDate;
+    @BindView(R.id.tv_id) TextView tvId;
     @BindView(R.id.iw_avatar) ImageView iwAvatar;
 
     public UserListLayout(Context context, @Nullable AttributeSet attrs) {
@@ -42,7 +42,7 @@ public class UserListLayout extends RelativeLayout {
 
     public void bind(UiBaseUser item) {
         tvUsername.setText(item.getLogin());
-        tvRegistrationDate.setText(String.valueOf(item.getId()));
+        tvId.append(String.valueOf(item.getId()));
 
         Glide.with(context).load(Uri.parse(item.getAvatarUrl())).asBitmap().centerCrop().into(new BitmapImageViewTarget(iwAvatar) {
             @Override

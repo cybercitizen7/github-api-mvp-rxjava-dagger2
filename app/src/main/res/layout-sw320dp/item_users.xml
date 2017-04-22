@@ -28,12 +28,14 @@
         android:layout_toEndOf="@+id/iw_avatar"
         android:layout_centerVertical="true">
         <TextView
-            android:id="@+id/tv_registration_date"
+            android:id="@+id/tv_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tv_username"
             android:gravity="center"
             android:padding="4dp"
-            android:text="@string/app_name"
+            android:text="@string/user_detail_id"
+            android:textSize="12sp"
             android:textColor="@color/colorDarkGray" />
 
         <TextView
@@ -41,12 +43,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_below="@+id/tv_registration_date"
             android:padding="4dp"
             android:text="@string/app_name"
             android:textColor="#000000"
-            android:textSize="18sp"
-            android:transitionName="username"/>
+            android:textSize="18sp" />
     </RelativeLayout>
 
 </com.dk.umwerktestapp.ui.main.list.layout.UserListLayout>

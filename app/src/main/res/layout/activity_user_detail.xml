@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorDarkGray20">
 
     <android.support.v7.widget.AppCompatImageView
@@ -13,6 +14,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
         android:elevation="5dp"
+        android:padding="4dp"
+        app:srcCompat="@drawable/avatar_oval_boarder"
         android:transitionName="avatar" />
 
     <include layout="@layout/partial_layout_followers"
@@ -37,7 +40,7 @@
         android:transitionName="username"/>
 
     <TextView
-        android:id="@+id/tv_registration_date"
+        android:id="@+id/tv_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -53,7 +56,7 @@
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_below="@+id/tv_registration_date"
+        android:layout_below="@+id/tv_id"
         android:layout_alignEnd="@+id/followers"
         android:layout_alignStart="@+id/followers" />
 
