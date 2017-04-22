@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorDarkGray">#808080</color>
+    <color name="colorDarkGray80">#CC808080</color>
+    <color name="colorDarkGray50">#7F808080</color>
+    <color name="colorDarkGray20">#33808080</color>
+
+    <color name="colorOrangeRed">#F44336</color>
+    <color name="colorOrangeRed80">#CCF44336</color>
+    <color name="colorOrangeRed50">#7FF44336</color>
+    <color name="colorOrangeRed20">#33F44336</color>
+
+    <color name="colorPink">#E91E63</color>
+    <color name="colorPink80">#CCE91E63</color>
+    <color name="colorPink50">#7FE91E63</color>
+    <color name="colorPink20">#33E91E63</color>
+
+    <color name="colorDreamyBlue">#3F51B5</color>
+    <color name="colorDreamyBlue80">#CC3F51B5</color>
+    <color name="colorDreamyBlue50">#7F3F51B5</color>
+    <color name="colorDreamyBlue20">#333F51B5</color>
+
+    <color name="colorTeal">#009688</color>
+    <color name="colorTeal80">#CC009688</color>
+    <color name="colorTeal50">#7F009688</color>
+    <color name="colorTeal20">#33009688</color>
+
+    <color name="colorGreen">#689F38</color>
+    <color name="colorGreen80">#CC689F38</color>
+    <color name="colorGreen50">#7F689F38</color>
+    <color name="colorGreen20">#33689F38</color>
+
+    <color name="colorFreakyYellow80">#CCFFFF00</color>
+
+    <color name="colorLime">#CDDC39</color>
+    <color name="colorLime80">#CCCDDC39</color>
+    <color name="colorLime50">#7FCDDC39</color>
+    <color name="colorLime20">#33CDDC39</color>
+
+    <color name="colorPerlWhite">#ECEFF1</color>
+    <color name="colorPureWhite">#FFFFFF</color>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Umwerk Test App</string>
+
+    <string name="progress_dialog_title">Loading data…</string>
+    <string name="chooser_dialog_title">Insert programming language</string>
+    <string name="chooser_dialog_hint">java,c#,js,…</string>
+    <string name="dialog_ok">OK</string>
+
+    <string name="error_message_invalid_query">Your input query is invalid. Please try again.</string>
+    <string name="error_message_error">ERROR</string>
+    <string name="error_message_no_email">There are no email clients installed.</string>
+    <string name="error_message_no_internet">You are not connected to internet. Connect and launch app again.</string>
+
+</resources>
