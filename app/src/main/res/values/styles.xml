@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorDreamyBlue80</item>
         <item name="colorPrimaryDark">@color/colorDreamyBlue80</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorBackground">@color/colorPerlWhite</item>
     </style>
 
     <style name="GithubTheme" parent="Theme.AppCompat.Light.DarkActionBar">

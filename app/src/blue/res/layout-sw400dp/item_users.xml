@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.dk.umwerktestapp.ui.main.list.layout.UserListLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/list_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorDreamyBlue"
+    android:clickable="true" >
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/iw_avatar"
+        style="@style/ImageViewListStyle"
+        app:srcCompat="@drawable/avatar_oval_boarder_github"
+        android:transitionName="avatar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/iw_avatar"
+        android:layout_centerVertical="true">
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/user_detail_id"
+            android:textSize="12sp"
+            android:padding="@dimen/default_small_padding"
+            android:textColor="@color/colorDarkGray" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@+id/tv_id"
+            android:padding="@dimen/default_small_padding"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</com.dk.umwerktestapp.ui.main.list.layout.UserListLayout>
