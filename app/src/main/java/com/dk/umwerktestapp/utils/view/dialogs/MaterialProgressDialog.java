@@ -1,10 +1,8 @@
 package com.dk.umwerktestapp.utils.view.dialogs;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.text.InputType;
 
-import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.dk.umwerktestapp.R;
 
@@ -58,6 +56,7 @@ public class MaterialProgressDialog {
                 .title(R.string.error_message_error)
                 .content(R.string.error_message_no_internet)
                 .positiveText(R.string.dialog_ok)
+                .cancelable(false)
                 .onPositive(listener::onCloseApp)
                 .show();
     }

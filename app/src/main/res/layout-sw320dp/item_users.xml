@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#F5F1EF"
+    android:background="@color/colorPerlWhite"
     android:clickable="true" >
 
     <android.support.v7.widget.AppCompatImageView

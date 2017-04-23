@@ -23,6 +23,7 @@ import com.dk.umwerktestapp.R;
 import com.dk.umwerktestapp.ui.main.model.UiBaseUser;
 import com.dk.umwerktestapp.ui.user.model.UiUserData;
 import com.dk.umwerktestapp.utils.format.DateFormatter;
+import com.dk.umwerktestapp.utils.networking.InternetConnection;
 import com.dk.umwerktestapp.utils.view.dialogs.MaterialDialogListener;
 import com.dk.umwerktestapp.utils.view.dialogs.MaterialProgressDialog;
 import com.dk.umwerktestapp.utils.view.dialogs.Toaster;
@@ -65,25 +66,30 @@ public class UserDetailActivity extends Activity implements UserDetailMvp.View, 
         setContentView(R.layout.activity_user_detail);
         ButterKnife.bind(this);
         initializeDagger();
-        progressDialog.showBlockingLoading();
-        AndroidThreeTen.init(this);
 
-        Bundle bundle = getIntent().getExtras();
-
-        UiBaseUser baseData;
-        String transitionName;
-        if (bundle != null) {
-            baseData = Parcels.unwrap(bundle.getParcelable(EXTRA_USER_NAME));
-            transitionName = bundle.getString(EXTRA_TRANSITION_NAME);
-            presenter.onCreate(baseData);
+        if (!InternetConnection.isNetworkAvailable(this)) {
+            progressDialog.showErrorDialog();
         } else {
-            throw new IllegalStateException("Initial bundle in UserDetail Activity is null");
+            progressDialog.showBlockingLoading();
+            AndroidThreeTen.init(this);
+
+            Bundle bundle = getIntent().getExtras();
+
+            UiBaseUser baseData;
+            String transitionName;
+            if (bundle != null) {
+                baseData = Parcels.unwrap(bundle.getParcelable(EXTRA_USER_NAME));
+                transitionName = bundle.getString(EXTRA_TRANSITION_NAME);
+                presenter.onCreate(baseData);
+            } else {
+                throw new IllegalStateException("Initial bundle in UserDetail Activity is null");
+            }
+
+            iwAvatar.setTransitionName(transitionName);
+
+            tvUsername.setText(baseData.getLogin());
+            setAvatarImage(baseData.getAvatarUrl());
         }
-
-        iwAvatar.setTransitionName(transitionName);
-
-        tvUsername.setText(baseData.getLogin());
-        setAvatarImage(baseData.getAvatarUrl());
     }
 
     @OnClick(R.id.iw_email) void emailClicked() {
@@ -209,7 +215,7 @@ public class UserDetailActivity extends Activity implements UserDetailMvp.View, 
 
     @Override
     public void onCloseApp(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-        // DO NOTHING
+        finish();
     }
 
     @Override
