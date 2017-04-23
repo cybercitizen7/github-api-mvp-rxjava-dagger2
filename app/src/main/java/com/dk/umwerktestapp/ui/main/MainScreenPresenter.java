@@ -12,6 +12,7 @@ import rx.SingleSubscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
+import rx.functions.Func2;
 
 /**
  * Created by David on 20-Apr-17.
@@ -44,7 +45,7 @@ public class MainScreenPresenter implements MainScreenMvp.Presenter {
                                 ));
                     }
                 })
-                .toList()
+                .toSortedList(this::compare)
                 .toSingle()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleSubscriber<List<UiBaseUser>>() {
@@ -71,5 +72,9 @@ public class MainScreenPresenter implements MainScreenMvp.Presenter {
         if (userSub != null) {
             userSub.unsubscribe();
         }
+    }
+
+    private int compare(UiBaseUser user1, UiBaseUser user2) {
+        return user1.getLogin().compareToIgnoreCase(user2.getLogin());
     }
 }
