@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -87,6 +88,7 @@ public class UserDetailActivity extends Activity implements UserDetailMvp.View, 
 
     @OnClick(R.id.iw_email) void emailClicked() {
         if (userData.getEmail() != null) {
+            Log.d("TAG", "User email: " + userData.getEmail());
             openEmailIntent(userData.getEmail());
         }
     }
@@ -174,7 +176,7 @@ public class UserDetailActivity extends Activity implements UserDetailMvp.View, 
     private void openEmailIntent(String email) {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType(getString(R.string.user_detail_email_type));
-        i.putExtra(Intent.EXTRA_EMAIL, email);
+        i.putExtra(Intent.EXTRA_EMAIL, new String[] {email});
         try {
             startActivity(i);
         } catch (android.content.ActivityNotFoundException ex) {
