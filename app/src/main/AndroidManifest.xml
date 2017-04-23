@@ -13,15 +13,19 @@
         android:roundIcon="@mipmap/ic_app"
         android:supportsRtl="true"
         android:theme="@style/GithubTheme"
-        android:name=".App">
-        <activity android:name=".ui.main.MainScreenActivity">
+        android:name=".App" >
+        <activity
+            android:name=".ui.main.MainScreenActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.user.UserDetailActivity"/>
+        <activity
+            android:name=".ui.user.UserDetailActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
