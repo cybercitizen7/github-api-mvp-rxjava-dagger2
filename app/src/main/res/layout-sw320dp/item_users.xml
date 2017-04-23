@@ -14,7 +14,7 @@
         android:layout_height="80dp"
         android:id="@+id/iw_avatar"
         style="@style/ImageViewListStyle"
-        app:srcCompat="@drawable/avatar_oval_boarder"
+        app:srcCompat="@drawable/avatar_oval_boarder_github"
         android:transitionName="avatar" />
 
     <RelativeLayout

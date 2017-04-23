@@ -7,4 +7,6 @@
 
     <dimen name="default_small_padding">4dp</dimen>
     <dimen name="default_mid_padding">8dp</dimen>
+
+    <dimen name="default_fab_margin">16dp</dimen>
 </resources>

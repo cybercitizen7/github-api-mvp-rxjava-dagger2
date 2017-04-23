@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import com.dk.umwerktestapp.R;
 import com.dk.umwerktestapp.ui.main.list.layout.UserListLayout;
 import com.dk.umwerktestapp.ui.main.model.UiBaseUser;
-import com.dk.umwerktestapp.utils.view.recycler.RecyclerClickListener;
+import com.dk.umwerktestapp.utils.view.recycler.RecyclerStateListener;
 import com.dk.umwerktestapp.utils.view.recycler.adapter.BaseAdapter;
 
 /**
@@ -21,9 +21,9 @@ import com.dk.umwerktestapp.utils.view.recycler.adapter.BaseAdapter;
 public class UsersAdapter extends BaseAdapter<UiBaseUser, UsersAdapter.UserVH> {
 
     private final LayoutInflater layoutInflater;
-    private RecyclerClickListener listener;
+    private RecyclerStateListener listener;
 
-    public UsersAdapter(Context context, RecyclerClickListener listener) {
+    public UsersAdapter(Context context, RecyclerStateListener listener) {
         this.layoutInflater = LayoutInflater.from(context);
         this.listener = listener;
     }

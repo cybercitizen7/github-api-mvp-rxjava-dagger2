@@ -44,4 +44,10 @@
 
     <color name="colorPerlWhite">#ECEFF1</color>
     <color name="colorPureWhite">#FFFFFF</color>
+
+    <color name="colorGithubDefault">#0D2636</color>
+    <color name="colorGithubDefault80">#152F3F</color>
+
+    <color name="colorGithubAccent">#255B7D</color>
+    <color name="colorGithubAccent2">#227FBA</color>
 </resources>

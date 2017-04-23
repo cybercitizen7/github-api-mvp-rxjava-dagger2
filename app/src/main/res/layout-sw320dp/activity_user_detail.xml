@@ -9,12 +9,12 @@
         android:id="@+id/iw_avatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/avatar_oval_boarder"
+        android:background="@drawable/avatar_ovar_boarder_blue"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/default_mid_margin"
         android:elevation="@dimen/default_elevation"
-        app:srcCompat="@drawable/avatar_oval_boarder"/>
+        app:srcCompat="@drawable/avatar_ovar_boarder_blue"/>
 
     <include layout="@layout/partial_layout_followers"
         android:id="@+id/followers"

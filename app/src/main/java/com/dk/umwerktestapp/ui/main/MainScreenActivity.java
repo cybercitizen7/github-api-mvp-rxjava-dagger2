@@ -2,17 +2,15 @@ package com.dk.umwerktestapp.ui.main;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -26,17 +24,24 @@ import com.dk.umwerktestapp.utils.view.dialogs.MaterialDialogListener;
 import com.dk.umwerktestapp.utils.view.dialogs.MaterialProgressDialog;
 import com.dk.umwerktestapp.utils.view.dialogs.Toaster;
 import com.dk.umwerktestapp.utils.view.recycler.DividerItemDecoration;
-import com.dk.umwerktestapp.utils.view.recycler.RecyclerClickListener;
+import com.dk.umwerktestapp.utils.view.recycler.RecyclerScrollListener;
+import com.dk.umwerktestapp.utils.view.recycler.RecyclerStateListener;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainScreenActivity extends AppCompatActivity implements MainScreenMvp.View,
-        RecyclerClickListener, MaterialDialogListener {
+        RecyclerStateListener, MaterialDialogListener {
 
     @Inject MainScreenMvp.Presenter presenter;
     @Inject MaterialProgressDialog progressDialog;
+
+    @BindView(R.id.fab) FloatingActionButton fab;
 
     RecyclerView recyclerView;
     private UsersAdapter adapter;
@@ -46,6 +51,7 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenM
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         initializeDagger();
 
         if (!InternetConnection.isNetworkAvailable(this)) {
@@ -59,28 +65,19 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenM
             RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
             recyclerView.setLayoutManager(mLayoutManager);
             recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext()));
+            recyclerView.addOnScrollListener(new RecyclerScrollListener(this));
             recyclerView.setAdapter(adapter);
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        if (item.getItemId() == R.id.new_search) {
-            progressDialog.showChooserDialog();
-        }
-        return super.onOptionsItemSelected(item);
+    @OnClick(R.id.fab) void onSearchClick() {
+        progressDialog.showChooserDialog();
     }
 
     @Override
     public void showUsers(List<UiBaseUser> items) {
         this.items = items;
+        fab.show();
         adapter.setData(items);
     }
 
@@ -94,6 +91,23 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenM
     public void onRowClick(ImageView imageView, int position) {
         openUserDetails(items.get(position), imageView);
     }
+
+    @Override
+    public void onScroll(RecyclerView view, int dx, int dy) {
+        if (dy > 0 ||dy<0 && fab.isShown())
+        {
+            fab.hide();
+        }
+    }
+
+    @Override
+    public void onScrollStateChanged(RecyclerView view, int newState) {
+        if (newState == RecyclerView.SCROLL_STATE_IDLE)
+        {
+            fab.show();
+        }
+    }
+
     @Override
     public void openUserDetails(UiBaseUser data, ImageView imageView) {
         String transitionName = ViewCompat.getTransitionName(imageView);
