@@ -47,6 +47,7 @@ public class MaterialProgressDialog {
                 .cancelable(false)
                 .title(R.string.chooser_dialog_title)
                 .inputType(InputType.TYPE_CLASS_TEXT)
+                .inputRangeRes(1, 10, R.color.colorOrangeRed)
                 .input(context.getString(R.string.chooser_dialog_hint), null,
                         listener::onInput).show();
     }
@@ -57,12 +58,7 @@ public class MaterialProgressDialog {
                 .title(R.string.error_message_error)
                 .content(R.string.error_message_no_internet)
                 .positiveText(R.string.dialog_ok)
-                .onPositive(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                        listener.onCloseApp(dialog, which);
-                    }
-                })
+                .onPositive(listener::onCloseApp)
                 .show();
     }
 }

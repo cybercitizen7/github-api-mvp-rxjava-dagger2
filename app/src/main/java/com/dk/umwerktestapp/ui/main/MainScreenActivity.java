@@ -8,6 +8,8 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -58,6 +60,21 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenM
             recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext()));
             recyclerView.setAdapter(adapter);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == R.id.new_search) {
+            progressDialog.showChooserDialog();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

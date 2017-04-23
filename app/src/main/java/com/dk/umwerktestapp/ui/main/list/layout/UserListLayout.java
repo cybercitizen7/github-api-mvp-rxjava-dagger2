@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -42,6 +43,9 @@ public class UserListLayout extends RelativeLayout {
 
     public void bind(UiBaseUser item) {
         tvUsername.setText(item.getLogin());
+        if (tvId.getText().length() > 3) {
+            tvId.setText(R.string.user_detail_id);
+        }
         tvId.append(String.valueOf(item.getId()));
 
         Glide.with(context).load(Uri.parse(item.getAvatarUrl())).asBitmap().centerCrop().into(new BitmapImageViewTarget(iwAvatar) {
