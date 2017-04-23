@@ -21,11 +21,11 @@ APP FEATURES:
 	- Click Email icon (if available) to send email to the user (using your default email app)
 	- Click Info icon to open web browser redirecting you to users Github Profile
 	- Click Search icon to initiate new search
-------------------
 
-	![alt tag](http://shrani.si/f/1E/uy/1fXqjS1Y/screenghapp1.png)
 
-	![alt tag](http://shrani.si/f/1o/87/2Jw33e2t/screenghapp2.png)
+![alt tag](http://shrani.si/f/1E/uy/1fXqjS1Y/screenghapp1.png)
+
+![alt tag](http://shrani.si/f/1o/87/2Jw33e2t/screenghapp2.png)
 	
-	![alt tag](http://shrani.si/f/1f/CZ/24W6POC7/screenghapp3.png)
+![alt tag](http://shrani.si/f/1f/CZ/24W6POC7/screenghapp3.png)
 
