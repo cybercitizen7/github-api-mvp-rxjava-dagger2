@@ -25,6 +25,7 @@ import com.dk.umwerktestapp.ui.user.model.UiUserData;
 import com.dk.umwerktestapp.utils.format.DateFormatter;
 import com.dk.umwerktestapp.utils.view.dialogs.MaterialDialogListener;
 import com.dk.umwerktestapp.utils.view.dialogs.MaterialProgressDialog;
+import com.dk.umwerktestapp.utils.view.dialogs.Toaster;
 import com.jakewharton.threetenabp.AndroidThreeTen;
 
 import org.parceler.Parcels;
@@ -178,8 +179,7 @@ public class UserDetailActivity extends Activity implements UserDetailMvp.View, 
         try {
             startActivity(i);
         } catch (android.content.ActivityNotFoundException ex) {
-            Toast.makeText(UserDetailActivity.this, R.string.error_message_no_email,
-                    Toast.LENGTH_SHORT).show();
+            Toaster.showErrorToast(this, getString(R.string.error_message_no_email));
         }
     }
 
@@ -214,7 +214,6 @@ public class UserDetailActivity extends Activity implements UserDetailMvp.View, 
 
     @Override
     public void showErrorMessage(String message) {
-        Toast.makeText(this, R.string.error_message_error + message, Toast.LENGTH_LONG)
-                .show();
+        Toaster.showErrorToast(this, message);
     }
 }

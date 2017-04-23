@@ -24,6 +24,7 @@ import com.dk.umwerktestapp.ui.user.UserDetailActivity;
 import com.dk.umwerktestapp.utils.networking.InternetConnection;
 import com.dk.umwerktestapp.utils.view.dialogs.MaterialDialogListener;
 import com.dk.umwerktestapp.utils.view.dialogs.MaterialProgressDialog;
+import com.dk.umwerktestapp.utils.view.dialogs.Toaster;
 import com.dk.umwerktestapp.utils.view.recycler.DividerItemDecoration;
 import com.dk.umwerktestapp.utils.view.recycler.RecyclerClickListener;
 
@@ -115,15 +116,13 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenM
 
     @Override
     public void onIncorrectEntry() {
-        Toast.makeText(this, R.string.error_message_invalid_query, Toast.LENGTH_LONG)
-                .show();
+        Toaster.showErrorToast(this, getString(R.string.error_message_invalid_query));
         progressDialog.showChooserDialog();
     }
 
     @Override
     public void showErrorMessage(String message) {
-        Toast.makeText(this, R.string.error_message_error + message, Toast.LENGTH_LONG)
-                .show();
+        Toaster.showErrorToast(this, message);
     }
 
     private void initializeDagger() {
