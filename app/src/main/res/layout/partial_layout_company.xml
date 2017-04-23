@@ -17,10 +17,7 @@
         android:id="@+id/tv_company"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_weight="1"
         android:maxLines="2"
-        android:background="@drawable/rectangle_rounded_green"
-        android:textColor="@color/colorPerlWhite"
-        android:gravity="center" />
+        style="@style/PartialLayoutStyle.TextViewGreen" />
 
 </LinearLayout>

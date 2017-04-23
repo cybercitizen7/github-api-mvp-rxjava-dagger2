@@ -12,11 +12,9 @@
         android:background="@drawable/avatar_oval_boarder"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="40dp"
-        android:elevation="5dp"
-        android:padding="4dp"
-        app:srcCompat="@drawable/avatar_oval_boarder"
-        android:transitionName="avatar" />
+        android:layout_marginTop="@dimen/default_mid_margin"
+        android:elevation="@dimen/default_elevation"
+        app:srcCompat="@drawable/avatar_oval_boarder"/>
 
     <include layout="@layout/partial_layout_followers"
         android:id="@+id/followers"
@@ -32,28 +30,27 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_centerVertical="true"
-        android:padding="4dp"
+        android:padding="@dimen/default_small_padding"
         android:text="@string/app_name"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:background="@color/colorDarkGray20"
-        android:transitionName="username"/>
+        android:background="@color/colorDreamyBlue80" />
 
     <TextView
         android:id="@+id/tv_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="4dp"
+        android:padding="@dimen/default_small_padding"
         android:layout_below="@id/tv_username"
-        android:text="Registration date: "
-        android:textColor="@color/colorDarkGray"
+        android:text="@string/user_detail_registration_date"
+        android:textColor="@color/colorDarkGray10"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true" />
 
     <include layout="@layout/partial_layout_company"
         android:id="@+id/company"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/default_mid_padding"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_below="@+id/location"
@@ -65,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:layout_below="@id/tv_id"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/default_mid_padding"
         android:layout_alignEnd="@+id/followers"
         android:layout_alignStart="@+id/company" />
 
@@ -73,27 +70,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="8dp"
+        android:padding="@dimen/default_mid_padding"
         android:layout_toStartOf="@+id/iw_avatar"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:background="@color/colorDreamyBlue">
 
-        <ImageView
+        <android.support.v7.widget.AppCompatImageView
             android:id="@+id/iw_email"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:src="@android:drawable/ic_dialog_email"
-            android:elevation="5dp" />
+            android:elevation="@dimen/default_elevation" />
 
-        <ImageView
+        <android.support.v7.widget.AppCompatImageView
             android:id="@+id/iw_website"
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:src="@android:drawable/ic_dialog_info"
-            android:elevation="5dp" />
+            android:elevation="@dimen/default_elevation" />
     </LinearLayout>
 
 </RelativeLayout>

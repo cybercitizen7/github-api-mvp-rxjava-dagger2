@@ -3,4 +3,5 @@
     <string name="user_detail_no_company">Unknown</string>
     <string name="user_detail_email_type">text/plain</string>
     <string name="user_detail_id">ID: </string>
+    <string name="user_detail_registration_date">Registration date: </string>
 </resources>
