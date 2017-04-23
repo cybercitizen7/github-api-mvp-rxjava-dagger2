@@ -40,4 +40,8 @@
         <item name="android:background">@drawable/rectangle_rounded_lime</item>
     </style>
 
+    <style name="PartialLayoutStyle.GithubAccent">
+        <item name="android:background">@drawable/rectangle_rounded_github_accent</item>
+    </style>
+
 </resources>

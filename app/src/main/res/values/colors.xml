@@ -48,6 +48,12 @@
     <color name="colorGithubDefault">#0D2636</color>
     <color name="colorGithubDefault80">#152F3F</color>
 
+    <color name="colorGithubWebBackground">#3C4146</color>
+    <color name="colorGithubWebBackground50">#7F3C4146</color>
+    <color name="colorGithubWebBackground20">#333C4146</color>
+    <color name="colorGithubWebBackground10">#193C4146</color>
+    <color name="colorGithubWebBackground5">#0C3C4146</color>
+
     <color name="colorGithubAccent">#255B7D</color>
-    <color name="colorGithubAccent2">#227FBA</color>
+    <color name="colorGithubAccent5">#0C255B7D</color>
 </resources>

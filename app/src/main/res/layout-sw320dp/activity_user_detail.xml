@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPerlWhite">
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/iw_avatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/avatar_ovar_boarder_blue"
+        android:background="@drawable/avatar_oval_boarder_github"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/default_mid_margin"
         android:elevation="@dimen/default_elevation"
-        app:srcCompat="@drawable/avatar_ovar_boarder_blue"/>
+        app:srcCompat="@drawable/avatar_oval_boarder_github"/>
 
     <include layout="@layout/partial_layout_followers"
         android:id="@+id/followers"
@@ -34,17 +35,18 @@
         android:text="@string/app_name"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        android:background="@color/colorDreamyBlue80" />
+        android:background="@color/colorGithubDefault80" />
 
     <TextView
-        android:id="@+id/tv_id"
+        android:id="@+id/tv_registration_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="@dimen/default_small_padding"
         android:layout_below="@id/tv_username"
         android:text="@string/user_detail_registration_date"
-        android:textColor="@color/colorDarkGray10"
+        android:textColor="@color/colorDarkGray"
+        android:background="@color/colorDarkGray10"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true" />
 
@@ -61,8 +63,8 @@
         android:id="@+id/location"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_below="@id/tv_id"
-        android:layout_marginTop="@dimen/default_mid_padding"
+        android:layout_below="@id/tv_registration_date"
+        android:layout_marginTop="@dimen/default_mid_margin"
         android:layout_alignEnd="@+id/followers"
         android:layout_alignStart="@+id/company" />
 
@@ -74,7 +76,7 @@
         android:layout_toStartOf="@+id/iw_avatar"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:background="@color/colorDreamyBlue">
+        android:background="@color/colorGithubDefault">
 
         <android.support.v7.widget.AppCompatImageView
             android:id="@+id/iw_email"
